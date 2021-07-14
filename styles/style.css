@@ -1,11 +1,11 @@
-/* Add google font poppin */
+/*..........Add google font poppin....... */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-/* Body style start */
+/*........Body style start.......*/
 body{
     font-family: 'Poppins', sans-serif;
 }
-/* Header Section style start */
+/*.........Header Section style start......... */
 header{
     background-color: #2D25A0;
     height: 677px;
@@ -33,6 +33,12 @@ header{
     color: white;
     background-color: #E02C6D;
     padding: 10px 24px;
+    cursor: pointer;
+}
+.header-title a:hover{
+    font-size: 20px;
+    color: orange;
+    transition: font-size 1s ease-in-out;
 }
 .fa-arrow-right{
     margin-left: 8px;
@@ -53,18 +59,28 @@ header{
     transition: transform 2s ease-in-out;
 }
 
-/* Main Section style start */
-
-/* All Players Style */
+/*.......Main Section style start...... */
 main{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+/*.......All Players Style............ */
 .container{
     background-color: #FFFFFF;
     width: 1050px;
     padding-top: 70px;
     padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-title{
+    margin-bottom: 30px;
+}
+.container p{
+    color: rgba(0, 0, 0, 0.459);
 }
 .all-players{
     display: grid;
@@ -91,17 +107,121 @@ main{
     font-size: 16px;
     font-weight: 400;
 }
+/*........Latest News style start......... */
+.section-title h1{
+    font-size: 40px;
+    color: rgb(214, 12, 12);
+    margin: 50px 0 0 0;
+}
+.section-title span{
+    color: orange;
+}
+.all-news{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.news{
+    border: 1px solid white;
+    padding: 15px;
+    box-shadow: 10px 10px 40px gray;
+}
+.news .news-pic img{
+    width: 300px;
+    height: 256px;
+}
+.news-info{
+    width: 300px;
+}
+.news-info h3{
+    font-size: 16px;
+    color: rgb(214, 12, 12);
+}
+.news-info h2{
+    font-size: 22px;
+}
+.news-info h2:hover{
+    color: orange;
+    cursor: pointer;
+}
+.news-info p{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+}
 
-/* Footer style start */
+/*........Footer style start....... */
 .footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
+    margin-top: 40px;
 }
 .footer-image img{
-    width: 400px;
+    width: 450px;
 }
 .social-link{
-    color: grey;
+    color: orange;
     font-size: 30px;
+}
+.fab{
+    background-color: black;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* --------------------
+        Media Quary
+------------------------*/
+/* Mobail Only */
+@media only screen and (max-width: 688px){
+    header{
+        width: 100%;
+        height: 800px;
+    }
+    .header{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+    .header-title{
+        width: 350px;
+        height: 270px;
+        margin-left: 16px;
+    }
+    .header-title h1{
+        font-size: 46px;
+        color: white;
+    }
+    .header-title a{
+        font-size: 20px;
+        color: white;
+        background-color: #E02C6D;
+        padding: 10px 24px;
+        cursor: pointer;
+    }
+    .header-banner{
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        margin:30px 0 20px 16px;
+    }
+    .container, .footer{
+        width:100%;
+    }
+    .all-players, .all-news, .footer{
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+    }
+    .footer{
+        padding:50px 70px 50px 30px;
+    }
+    .footer-image img{
+        width: 350px;
+        padding-right: 50px;
+    }
 }
